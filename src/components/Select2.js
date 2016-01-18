@@ -7,7 +7,7 @@ export default class Select2 extends Component {
   static propTypes = {
     defaultValue: PropTypes.oneOfType([
       PropTypes.number,
-      PropTypes.array,
+      PropTypes.array
     ]),
     data: PropTypes.array,
     events: PropTypes.array,
@@ -17,8 +17,8 @@ export default class Select2 extends Component {
     onClose: PropTypes.func,
     onSelect: PropTypes.func,
     onChange: PropTypes.func,
-    onUnselect: PropTypes.func,
-  }
+    onUnselect: PropTypes.func
+  };
 
   static defaultProps = {
     data: [],
@@ -27,11 +27,11 @@ export default class Select2 extends Component {
       ['select2:open', 'onOpen'],
       ['select2:close', 'onClose'],
       ['select2:select', 'onSelect'],
-      ['select2:unselect', 'onUnselect'],
+      ['select2:unselect', 'onUnselect']
     ],
     options: {},
-    multiple: false,
-  }
+    multiple: false
+  };
 
   constructor(props) {
     super(props);
@@ -53,7 +53,7 @@ export default class Select2 extends Component {
 
   render() {
     return (
-      <select multiple={this.props.multiple} defaultValue={this.props.defaultValue}>
+      <select multiple={this.props.multiple} defaultValue={this.props.defaultValue} className={this.props.className}>
         {this.props.data.map((item, k) => {
           if (typeof item === 'string' ||
             ((!!item && typeof item === 'object') && Object.prototype.toString.call(item) === '[object String]')) {
